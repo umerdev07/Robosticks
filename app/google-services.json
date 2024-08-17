@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "807573086068",
+    "project_id": "robostick-298be",
+    "storage_bucket": "robostick-298be.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:807573086068:android:bdc8b0a786b87a237b1621",
+        "android_client_info": {
+          "package_name": "com.maths.robostick"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBYOrcg01ju9pEZCJse-1A5sRIH7guy65M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

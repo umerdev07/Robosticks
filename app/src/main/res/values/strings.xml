@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Robostick</string>
+    <string name="lorem"><![CDATA[It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. ]]></string>
+    <string name="email_or_username">Email or username*</string>
+    <string name="password">Password*</string>
+    <string name="login">Login</string>
+    <string name="sign_in">Sign In</string>
+    <string name="do_you_need">Do you need?</string>
+    <string name="as">as</string>
+    <string name="student">Student</string>
+    <string name="name">Name*</string>
+    <string name="father_name">Father name</string>
+    <string name="phone_number">Phone number*</string>
+    <string name="school_name">School name*</string>
+    <string name="grade">Grade*</string>
+    <string name="address">Address</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="ok">\n</string>
+    <string name="please_wait">Please wait</string>
+    <string name="enter_otp">Enter OTP</string>
+    <string name="verify">Verify</string>
+    <string name="resend">Resend</string>
+    <string name="timer">Timer</string>
+    <string name="_00">00</string>
+    <string name="choose_otp_type">Choose OTP Type</string>
+    <string name="email">Email</string>
+    <string name="phone_numbers">PHONE NUMBER</string>
+    <string name="emails">EMAIL</string>
+    <string name="OK">OK</string>
+    <string name="otp_verification">OTP Verification</string>
+    <string name="instructions">Instructions</string>
+</resources>

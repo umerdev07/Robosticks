@@ -18,6 +18,7 @@ class StudentActivity : AppCompatActivity() {
         setContentView(R.layout.activity_student)
 
         val kids = findViewById<Button>(R.id.kidage)
+        val young = findViewById<Button>(R.id.age11_plus)
         val facebook = findViewById<ImageView>(R.id.facebook)
         val linkdin = findViewById<ImageView>(R.id.linkdin)
         val instagram = findViewById<ImageView>(R.id.instagram)
@@ -25,14 +26,19 @@ class StudentActivity : AppCompatActivity() {
         kids.setOnClickListener {
             startActivity(Intent(applicationContext ,ChildCourseActivity::class.java))
         }
+
+        young.setOnClickListener {
+            startActivity(Intent(applicationContext , AdultCourseActivity::class.java))
+        }
+
         facebook.setOnClickListener {
             val intent = Intent(Intent.ACTION_VIEW)
-            intent.data = Uri.parse("https://www.instagram.com/robosticksofficial/")
+            intent.data = Uri.parse("https://web.facebook.com/RoboSticks/")
             startActivity(intent)
         }
         instagram.setOnClickListener {
             val intent = Intent(Intent.ACTION_VIEW)
-            intent.data = Uri.parse("https://web.facebook.com/RoboSticks/")
+            intent.data = Uri.parse("https://www.instagram.com/robosticksofficial/")
             startActivity(intent)
         }
         linkdin.setOnClickListener {

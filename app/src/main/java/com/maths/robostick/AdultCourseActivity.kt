@@ -14,7 +14,7 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.maths.robostick.databinding.ActivityChildCourseBinding
 
-class ChildCourseActivity : AppCompatActivity() {
+class AdultCourseActivity : AppCompatActivity() {
     private val binding: ActivityChildCourseBinding by lazy {
         ActivityChildCourseBinding.inflate(layoutInflater)
     }
@@ -40,7 +40,7 @@ class ChildCourseActivity : AppCompatActivity() {
     }
 
     private fun getCourseData() {
-        databaseReference = FirebaseDatabase.getInstance().getReference("KidCourses")
+        databaseReference = FirebaseDatabase.getInstance().getReference("YoungCourses")
 
         databaseReference.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
@@ -61,7 +61,7 @@ class ChildCourseActivity : AppCompatActivity() {
                         // Handle item click
                         val topicKey = courseKeyMap.entries.find { it.value == course }?.key
                         if (topicKey != null) {
-                            val intent = Intent(this@ChildCourseActivity, MediaDiaplayActivity::class.java).apply {
+                            val intent = Intent(this@AdultCourseActivity, MediaDiaplayActivity::class.java).apply {
                                 putExtra("TOPIC_KEY", topicKey) // Pass the topic key
                             }
                             startActivity(intent)

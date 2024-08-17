@@ -13,7 +13,7 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.maths.robostick.databinding.ActivityMediaDiaplayBinding
 
-class MediaDiaplayActivity : AppCompatActivity() {
+class MediaDisplay2Activty : AppCompatActivity() {
 
     private val binding: ActivityMediaDiaplayBinding by lazy {
         ActivityMediaDiaplayBinding.inflate(layoutInflater)
@@ -36,7 +36,7 @@ class MediaDiaplayActivity : AppCompatActivity() {
     }
 
     private fun getMediaData(topicKey: String) {
-        databaseReference = FirebaseDatabase.getInstance().getReference("KidCourses").child(topicKey).child("media")
+        databaseReference = FirebaseDatabase.getInstance().getReference("YoungCourses").child(topicKey).child("media")
 
         databaseReference.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
@@ -58,12 +58,12 @@ class MediaDiaplayActivity : AppCompatActivity() {
                     // Set the images in the ImageSlider
                     imageSlider.setImageList(imageList)
                 } else {
-                    Toast.makeText(this@MediaDiaplayActivity, "No data found for the topic", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@MediaDisplay2Activty, "No data found for the topic", Toast.LENGTH_SHORT).show()
                 }
             }
 
             override fun onCancelled(error: DatabaseError) {
-                Toast.makeText(this@MediaDiaplayActivity, "Error fetching data: ${error.message}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@MediaDisplay2Activty, "Error fetching data: ${error.message}", Toast.LENGTH_SHORT).show()
             }
         })
     }

@@ -24,6 +24,15 @@
         android:theme="@style/Theme.Robostick"
         tools:targetApi="31">
         <activity
+            android:name=".MediaDisplay2Activty"
+            android:exported="false" />
+        <activity
+            android:name=".AdultCourseActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MediaDisplayActivity2"
+            android:exported="false" />
+        <activity
             android:name=".MediaDiaplayActivity"
             android:exported="false" />
         <activity

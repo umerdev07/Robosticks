@@ -2,6 +2,7 @@ package com.maths.robostick
 
 import android.net.Uri
 import android.os.Bundle
+import android.widget.TextView
 import android.widget.Toast
 import android.widget.VideoView
 import androidx.appcompat.app.AppCompatActivity
@@ -13,11 +14,14 @@ class ChildCourseVideo : AppCompatActivity() {
 
         // Get video URL and topic from Intent extras
         val videoUrl = intent.getStringExtra("VIDEO_URL")
-//        val videoTopic = intent.getStringExtra("videoTopic")
+        val videoTopic = intent.getStringExtra("topicname")
 
         // Find views by ID
 
         val videoView = findViewById<VideoView>(R.id.videoView)
+        val videotitle = findViewById<TextView>(R.id.videoTitle)
+
+        videotitle.text = videoTopic
 
         if (videoUrl != null) {
             videoView.setVideoURI(Uri.parse(videoUrl))

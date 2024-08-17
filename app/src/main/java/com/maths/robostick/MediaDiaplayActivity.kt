@@ -39,6 +39,7 @@ class MediaDiaplayActivity : AppCompatActivity() {
                 // Pass video URL to ChildCourseVideo activity
                 val intent = Intent(this@MediaDiaplayActivity, ChildCourseVideo::class.java)
                 intent.putExtra("VIDEO_URL", videoUrl)
+                intent.putExtra("topicname" , topicKey)
                 startActivity(intent)
             } else {
                 Toast.makeText(this@MediaDiaplayActivity, "No video available for this topic", Toast.LENGTH_SHORT).show()

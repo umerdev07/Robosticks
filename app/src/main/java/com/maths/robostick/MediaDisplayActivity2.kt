@@ -1,5 +1,6 @@
 package com.maths.robostick
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -15,12 +16,14 @@ import com.maths.robostick.databinding.ActivityMediaDiaplayBinding
 
 class MediaDisplayActivity2 : AppCompatActivity() {
 
+
     private val binding: ActivityMediaDiaplayBinding by lazy {
         ActivityMediaDiaplayBinding.inflate(layoutInflater)
     }
     private lateinit var databaseReference: DatabaseReference
     private lateinit var mediaArrayList: ArrayList<MediaClass>
     private lateinit var imageSlider: ImageSlider
+    private var videoUrl :String?=null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,6 +34,18 @@ class MediaDisplayActivity2 : AppCompatActivity() {
         val topicKey = intent.getStringExtra("TOPIC_KEY") ?: return
 
         mediaArrayList = arrayListOf()
+
+        binding.videoBtn.setOnClickListener {
+            if (videoUrl != null) {
+                // Pass video URL to ChildCourseVideo activity
+                val intent = Intent(this@MediaDisplayActivity2, ChildCourseVideo::class.java)
+                intent.putExtra("VIDEO_URL", videoUrl)
+                intent.putExtra("topicname" , topicKey)
+                startActivity(intent)
+            } else {
+                Toast.makeText(this@MediaDisplayActivity2, "No video available for this topic", Toast.LENGTH_SHORT).show()
+            }
+        }
 
         getMediaData(topicKey)
     }
@@ -45,7 +60,7 @@ class MediaDisplayActivity2 : AppCompatActivity() {
 
                     // List to store SlideModel objects
                     val imageList = ArrayList<SlideModel>()
-
+                    videoUrl = snapshot.child("videoUrl").getValue(String::class.java)
                     for (mediaSnapshot in snapshot.children) {
                         val mediaUrl = mediaSnapshot.child("mediaUrl").getValue(String::class.java)
                         val mediaTile = mediaSnapshot.child("title").getValue(String::class.java)

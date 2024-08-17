@@ -40,7 +40,7 @@ class AdultCourseActivity : AppCompatActivity() {
     }
 
     private fun getCourseData() {
-        databaseReference = FirebaseDatabase.getInstance().getReference("YoungCourses")
+        databaseReference = FirebaseDatabase.getInstance().getReference("Courses2")
 
         databaseReference.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
@@ -57,16 +57,17 @@ class AdultCourseActivity : AppCompatActivity() {
                         }
                     }
 
-                    courseRecyclerView.adapter = AdapterClass(courseKeyMap.values.toList() as ArrayList<Courses>) { course ->
+                    courseRecyclerView.adapter = AdapterClass(ArrayList(courseKeyMap.values)) { course ->
                         // Handle item click
                         val topicKey = courseKeyMap.entries.find { it.value == course }?.key
                         if (topicKey != null) {
-                            val intent = Intent(this@AdultCourseActivity, MediaDiaplayActivity::class.java).apply {
+                            val intent = Intent(this@AdultCourseActivity, MediaDisplayActivity2::class.java).apply {
                                 putExtra("TOPIC_KEY", topicKey) // Pass the topic key
                             }
                             startActivity(intent)
                         }
                     }
+
                 }
             }
 

@@ -6,6 +6,7 @@ import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.WindowManager
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.storage.FirebaseStorage
 import com.maths.robostick.databinding.ActivityMainBinding
@@ -49,13 +50,17 @@ class MainActivity : AppCompatActivity() {
 
 
         binding.facebook.setOnClickListener {
-            val intent = Intent(Intent.ACTION_VIEW)
-            intent.data = Uri.parse("https://www.instagram.com/robosticksofficial/")
-            startActivity(intent)
+            try {
+                val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://web.facebook.com/RoboSticks/"))
+                startActivity(intent)
+            } catch (e: Exception) {
+                Toast.makeText(this, "Unable to open link", Toast.LENGTH_SHORT).show()
+            }
         }
+
         binding.instagram.setOnClickListener {
             val intent = Intent(Intent.ACTION_VIEW)
-            intent.data = Uri.parse("https://web.facebook.com/RoboSticks/")
+            intent.data = Uri.parse("https://www.instagram.com/robosticksofficial/")
             startActivity(intent)
         }
         binding.linkdin.setOnClickListener {

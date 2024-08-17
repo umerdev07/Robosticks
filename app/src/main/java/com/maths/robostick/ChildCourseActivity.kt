@@ -40,7 +40,7 @@ class ChildCourseActivity : AppCompatActivity() {
     }
 
     private fun getCourseData() {
-        databaseReference = FirebaseDatabase.getInstance().getReference("KidCourses")
+        databaseReference = FirebaseDatabase.getInstance().getReference("Courses")
 
         databaseReference.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
@@ -57,7 +57,7 @@ class ChildCourseActivity : AppCompatActivity() {
                         }
                     }
 
-                    courseRecyclerView.adapter = AdapterClass(courseKeyMap.values.toList() as ArrayList<Courses>) { course ->
+                    courseRecyclerView.adapter = AdapterClass(ArrayList(courseKeyMap.values)) { course ->
                         // Handle item click
                         val topicKey = courseKeyMap.entries.find { it.value == course }?.key
                         if (topicKey != null) {
@@ -67,6 +67,7 @@ class ChildCourseActivity : AppCompatActivity() {
                             startActivity(intent)
                         }
                     }
+
                 }
             }
 

@@ -24,7 +24,7 @@
         android:theme="@style/Theme.Robostick"
         tools:targetApi="31">
         <activity
-            android:name=".ChildCourseVideo"
+            android:name=".CourseVideo"
             android:exported="false" />
         <activity
             android:name=".MediaDisplayActivity2"

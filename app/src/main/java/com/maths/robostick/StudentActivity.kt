@@ -4,44 +4,44 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.widget.Button
-import android.widget.ImageView
+import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
+import com.maths.robostick.databinding.ActivityStudentBinding
 
 class StudentActivity : AppCompatActivity() {
-
+private val binding : ActivityStudentBinding by lazy {
+    ActivityStudentBinding.inflate(layoutInflater)
+}
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        window.setFlags(
+            WindowManager.LayoutParams.FLAG_FULLSCREEN,
+            WindowManager.LayoutParams.FLAG_FULLSCREEN
+        )
+        supportActionBar?.hide()
         // Initialize the binding object
-        setContentView(R.layout.activity_student)
+        setContentView(binding.root)
 
-        val kids = findViewById<Button>(R.id.kidage)
-        val young = findViewById<Button>(R.id.age11_plus)
-        val facebook = findViewById<ImageView>(R.id.facebook)
-        val linkdin = findViewById<ImageView>(R.id.linkdin)
-        val instagram = findViewById<ImageView>(R.id.instagram)
-
-        kids.setOnClickListener {
+        binding.kidage.setOnClickListener {
             startActivity(Intent(applicationContext ,ChildCourseActivity::class.java))
         }
 
-        young.setOnClickListener {
+        binding.age11Plus.setOnClickListener {
             startActivity(Intent(applicationContext , AdultCourseActivity::class.java))
         }
 
-        facebook.setOnClickListener {
+        binding.facebook.setOnClickListener {
             val intent = Intent(Intent.ACTION_VIEW)
             intent.data = Uri.parse("https://web.facebook.com/RoboSticks/")
             startActivity(intent)
         }
-        instagram.setOnClickListener {
+        binding.instagram.setOnClickListener {
             val intent = Intent(Intent.ACTION_VIEW)
             intent.data = Uri.parse("https://www.instagram.com/robosticksofficial/")
             startActivity(intent)
         }
-        linkdin.setOnClickListener {
+        binding.linkdin.setOnClickListener {
             val intent = Intent(Intent.ACTION_VIEW)
             intent.data = Uri.parse("https://www.linkedin.com/company/robosticks/")
             startActivity(intent)

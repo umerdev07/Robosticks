@@ -37,7 +37,7 @@ class MediaDiaplayActivity : AppCompatActivity() {
         binding.videoBtn.setOnClickListener {
             if (videoUrl != null) {
                 // Pass video URL to ChildCourseVideo activity
-                val intent = Intent(this@MediaDiaplayActivity, ChildCourseVideo::class.java)
+                val intent = Intent(this@MediaDiaplayActivity, CourseVideo::class.java)
                 intent.putExtra("VIDEO_URL", videoUrl)
                 intent.putExtra("topicname" , topicKey)
                 startActivity(intent)

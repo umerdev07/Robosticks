@@ -25,6 +25,7 @@ class PhoneActivity : DialogFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        isCancelable = false
         return binding.root
     }
 

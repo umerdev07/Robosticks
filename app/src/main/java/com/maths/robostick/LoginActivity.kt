@@ -2,11 +2,12 @@ package com.maths.robostick
 
 import android.app.AlertDialog
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.maths.robostick.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {
@@ -46,7 +47,14 @@ class LoginActivity : AppCompatActivity() {
                             startActivity(intent)
                             finish()
                         } else {
-                            showAlertDialog("Failed to login. You may not be registered.")
+                            try{
+                                throw  task.exception ?: Exception("Unknown Error")
+                            }catch (e :FirebaseAuthInvalidCredentialsException){
+                                showAlertDialog("Incorrect Password or Username or User not registered")
+                            }catch (e :Exception){
+                                showAlertDialog("Login Failed! Connect your network")
+                            }
+
                         }
                     }
             }

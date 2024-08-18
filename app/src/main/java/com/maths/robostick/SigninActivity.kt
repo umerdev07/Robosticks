@@ -18,7 +18,6 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.i18n.phonenumbers.NumberParseException
 import com.google.i18n.phonenumbers.PhoneNumberUtil
-import com.maths.robostick.LoginActivity
 import com.maths.robostick.databinding.ActivitySigninBinding
 
 @Suppress("DEPRECATION")
@@ -75,11 +74,11 @@ class SigninActivity : AppCompatActivity() {
                 showAlertDialog("Fill all Credential")
             }
             // Check if profile image is selected
-            if (selectedImg == null) {
+            else if (selectedImg == null) {
                 Toast.makeText(applicationContext, "Please select your profile image", Toast.LENGTH_SHORT).show()
             }
 
-            if (phoneNumber.isNotEmpty()) {
+            else if (phoneNumber.isNotEmpty()) {
                 val formattedNumber = formatPhoneNumber(phoneNumber)
                 if (formattedNumber != null) {
                     // Create a new instance of PhoneActivity with formatted phone number
@@ -106,7 +105,7 @@ class SigninActivity : AppCompatActivity() {
     private fun formatPhoneNumber(phoneNumber: String): String? {
         val phoneNumberUtil = PhoneNumberUtil.getInstance()
         return try {
-            val number = phoneNumberUtil.parse(phoneNumber, "PK") // Default region code set to Pakistan
+            val number = phoneNumberUtil.parse(phoneNumber, "PK")
             phoneNumberUtil.format(number, PhoneNumberUtil.PhoneNumberFormat.E164)
         } catch (e: NumberParseException) {
             null

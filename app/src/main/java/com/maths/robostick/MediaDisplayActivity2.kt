@@ -12,13 +12,13 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
-import com.maths.robostick.databinding.ActivityMediaDiaplayBinding
+import com.maths.robostick.databinding.ActivityMediaDisplay2Binding
 
 class MediaDisplayActivity2 : AppCompatActivity() {
 
 
-    private val binding: ActivityMediaDiaplayBinding by lazy {
-        ActivityMediaDiaplayBinding.inflate(layoutInflater)
+    private val binding: ActivityMediaDisplay2Binding by lazy {
+        ActivityMediaDisplay2Binding.inflate(layoutInflater)
     }
     private lateinit var databaseReference: DatabaseReference
     private lateinit var mediaArrayList: ArrayList<MediaClass>
@@ -38,7 +38,7 @@ class MediaDisplayActivity2 : AppCompatActivity() {
         binding.videoBtn.setOnClickListener {
             if (videoUrl != null) {
                 // Pass video URL to ChildCourseVideo activity
-                val intent = Intent(this@MediaDisplayActivity2, ChildCourseVideo::class.java)
+                val intent = Intent(this@MediaDisplayActivity2, CourseVideo::class.java)
                 intent.putExtra("VIDEO_URL", videoUrl)
                 intent.putExtra("topicname" , topicKey)
                 startActivity(intent)

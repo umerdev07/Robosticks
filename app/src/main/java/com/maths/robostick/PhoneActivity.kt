@@ -1,3 +1,4 @@
+
 package com.maths.robostick
 
 import android.os.Bundle
@@ -41,12 +42,15 @@ class PhoneActivity : DialogFragment() {
         }
 
         binding.verify.setOnClickListener {
-            val code = binding.phone.text.toString()
+            val code = binding.OtpTextView.text.toString()
             if (code.isNotEmpty()) {
                 verifyPhoneNumberWithCode(verificationId, code)
             } else {
                 Toast.makeText(requireContext(), "Please Enter Verification code", Toast.LENGTH_SHORT).show()
             }
+        }
+        binding.close.setOnClickListener {
+            dismiss()
         }
     }
 

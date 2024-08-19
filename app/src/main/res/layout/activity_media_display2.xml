@@ -10,15 +10,15 @@
         android:id="@+id/videoBtn"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:text="Video ->"
-        android:textAlignment="textStart"
-        android:padding="30dp"
-        android:textStyle="bold"
-        android:textColor="@color/black"
-        android:textSize="25sp"
-        android:background="@drawable/edittext_round"
         android:layout_margin="23dp"
-        />
+        android:background="@drawable/roundvideobtn"
+        android:padding="30dp"
+        android:text="@string/video"
+        android:textAlignment="textStart"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        tools:ignore="TextContrastCheck" />
 
     <TextView
         android:layout_width="wrap_content"

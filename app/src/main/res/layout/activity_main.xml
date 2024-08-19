@@ -36,23 +36,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto"
-                    android:text="Logout"
-                    android:textColor="@color/black"
+                    android:text="@string/logout"
+                    android:textColor="@color/orange"
                     android:textSize="15sp"
-                    android:textStyle="normal" />
-
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/circleProfileImageView"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_marginTop="10dp"
-                    android:src="@drawable/profile" />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/profileEmail"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="20dp"
                     android:fontFamily="@font/roboto"
                     android:textColor="@color/white"
                     android:textSize="15sp" />
@@ -60,10 +53,10 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="30dp"
                     android:fontFamily="@font/roboto"
                     android:gravity="center"
-                    android:text="Discover new and updated curriculum"
+                    android:text="@string/discover_new_and_updated_curriculum"
                     android:textColor="@color/white"
                     android:textSize="30sp"
                     android:textStyle="bold" />
@@ -78,6 +71,18 @@
                     android:textColor="@color/white"
                     android:textSize="15sp"
                     android:textStyle="normal" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Learn more here!"
+                    android:textColor="@color/orange"
+                    android:padding="10dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:background="@color/black"
+                    android:textStyle="bold"
+                    />
 
             </LinearLayout>
 
@@ -104,7 +109,7 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="10dp"
                     android:fontFamily="@font/roboto"
-                    android:text="92M"
+                    android:text="@string/_92m"
                     android:textColor="@color/orange"
                     android:textSize="30sp"
                     android:textStyle="bold" />
@@ -114,7 +119,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginTop="5dp"
-                    android:text="students on Robostick.com"
+                    android:text="@string/students_on_robostick_com"
                     android:textColor="@color/black"
                     android:textSize="15sp" />
 
@@ -130,7 +135,7 @@
                         android:layout_marginStart="60dp"
                         android:layout_marginTop="10dp"
                         android:fontFamily="@font/roboto"
-                        android:text="39M"
+                        android:text="@string/_39m"
                         android:textColor="@color/orange"
                         android:textSize="30sp"
                         android:textStyle="bold" />
@@ -141,7 +146,7 @@
                         android:layout_marginStart="150dp"
                         android:layout_marginTop="10dp"
                         android:fontFamily="@font/roboto"
-                        android:text="311M"
+                        android:text="@string/_311m"
                         android:textColor="@color/orange"
                         android:textSize="30sp"
                         android:textStyle="bold" />
@@ -158,7 +163,7 @@
                         android:layout_marginStart="25dp"
                         android:layout_marginTop="5dp"
                         android:fontFamily="@font/roboto"
-                        android:text="of our students are girls"
+                        android:text="@string/of_our_students_are_girls"
                         android:textColor="@color/black"
                         android:textSize="15sp" />
 
@@ -169,7 +174,7 @@
                         android:layout_marginTop="5dp"
                         android:fontFamily="@font/roboto"
                         android:gravity="center"
-                        android:text="projects created on Robostick.com"
+                        android:text="@string/projects_created_on_robostick_com"
                         android:textColor="@color/black"
                         android:textSize="15sp" />
                 </LinearLayout>
@@ -185,7 +190,7 @@
                         android:layout_marginStart="60dp"
                         android:layout_marginTop="10dp"
                         android:fontFamily="@font/roboto"
-                        android:text="2.7M"
+                        android:text="@string/_2_7m"
                         android:textColor="@color/orange"
                         android:textSize="30sp"
                         android:textStyle="bold" />
@@ -196,7 +201,7 @@
                         android:layout_marginStart="170dp"
                         android:layout_marginTop="10dp"
                         android:fontFamily="@font/roboto"
-                        android:text="50"
+                        android:text="@string/_50"
                         android:textColor="@color/orange"
                         android:textSize="30sp"
                         android:textStyle="bold" />
@@ -214,7 +219,7 @@
                         android:layout_marginTop="5dp"
                         android:fontFamily="@font/roboto"
                         android:gravity="center"
-                        android:text="teachers use Robostick.com"
+                        android:text="@string/teachers_use_robostick_com"
                         android:textColor="@color/black"
                         android:textSize="15sp" />
 
@@ -225,7 +230,7 @@
                         android:layout_marginTop="5dp"
                         android:fontFamily="@font/roboto"
                         android:gravity="center"
-                        android:text="All 50 states support computer science"
+                        android:text="@string/all_50_states_support_computer_science"
                         android:textColor="@color/black"
                         android:textSize="15sp" />
                 </LinearLayout>
@@ -249,7 +254,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="200dp"
                             android:scaleType="centerCrop"
-                            android:src="@drawable/hourofcode" />
+                            android:src="@drawable/hourofcode"
+                            tools:ignore="ContentDescription" />
 
                         <TextView
                             android:layout_width="match_parent"
@@ -259,7 +265,7 @@
                             android:fontFamily="@font/roboto"
                             android:gravity="center"
                             android:padding="8dp"
-                            android:text="Hour of Code"
+                            android:text="@string/hour_of_code"
                             android:textColor="@color/white"
                             android:textSize="25sp"
                             android:textStyle="bold" />
@@ -271,7 +277,7 @@
                             android:fontFamily="@font/roboto"
                             android:gravity="center"
                             android:padding="8dp"
-                            android:text="Explore, play, and create"
+                            android:text="@string/explore_play_and_create"
                             android:textColor="@color/orange"
                             android:textSize="15sp" />
                     </LinearLayout>
@@ -296,7 +302,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="200dp"
                             android:scaleType="centerCrop"
-                            android:src="@drawable/students" />
+                            android:src="@drawable/students"
+                            tools:ignore="ContentDescription" />
 
                         <TextView
                             android:layout_width="match_parent"
@@ -306,7 +313,7 @@
                             android:fontFamily="@font/roboto"
                             android:gravity="center"
                             android:padding="8dp"
-                            android:text="Students"
+                            android:text="@string/students"
                             android:textColor="@color/white"
                             android:textSize="25sp"
                             android:textStyle="bold" />
@@ -318,7 +325,7 @@
                             android:fontFamily="@font/roboto"
                             android:gravity="center"
                             android:padding="8dp"
-                            android:text="Explore our courses"
+                            android:text="@string/explore_our_courses"
                             android:textColor="@color/orange"
                             android:textSize="15sp" />
                     </LinearLayout>
@@ -343,7 +350,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="200dp"
                             android:scaleType="centerCrop"
-                            android:src="@drawable/educator" />
+                            android:src="@drawable/educator"
+                            tools:ignore="ContentDescription" />
 
                         <TextView
                             android:layout_width="match_parent"
@@ -353,7 +361,7 @@
                             android:fontFamily="@font/roboto"
                             android:gravity="center"
                             android:padding="8dp"
-                            android:text="Educators"
+                            android:text="@string/educators"
                             android:textColor="@color/white"
                             android:textSize="25sp"
                             android:textStyle="bold" />
@@ -365,7 +373,7 @@
                             android:fontFamily="@font/roboto"
                             android:gravity="center"
                             android:padding="8dp"
-                            android:text="Teach your students"
+                            android:text="@string/teach_your_students"
                             android:textColor="@color/orange"
                             android:textSize="15sp" />
                     </LinearLayout>
@@ -389,7 +397,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="200dp"
                             android:scaleType="centerCrop"
-                            android:src="@drawable/pakistan" />
+                            android:src="@drawable/pakistan"
+                            tools:ignore="ContentDescription" />
 
                         <TextView
                             android:layout_width="match_parent"
@@ -399,7 +408,7 @@
                             android:fontFamily="@font/roboto"
                             android:gravity="center"
                             android:padding="8dp"
-                            android:text="Get involved"
+                            android:text="@string/get_involved"
                             android:textColor="@color/white"
                             android:textSize="25sp"
                             android:textStyle="bold" />
@@ -411,7 +420,7 @@
                             android:fontFamily="@font/roboto"
                             android:gravity="center"
                             android:padding="8dp"
-                            android:text="Support diversity in computing"
+                            android:text="@string/support_diversity_in_computing"
                             android:textColor="@color/orange"
                             android:textSize="15sp" />
                     </LinearLayout>
@@ -431,7 +440,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Robostick.com"
+                        android:text="@string/robostick_com"
                         android:textColor="@color/white"
                         android:textSize="15sp"
                         />
@@ -440,7 +449,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:text="____________________________________________________"
+                        android:text="@string/line"
                         android:textColor="@color/white" />
 
                     <LinearLayout
@@ -453,28 +462,31 @@
                             android:layout_width="40dp"
                             android:layout_height="40dp"
                             android:layout_margin="10dp"
-                            android:background="@drawable/facebook" />
+                            android:background="@drawable/facebook"
+                            tools:ignore="ContentDescription" />
 
                         <ImageView
                             android:id="@+id/instagram"
                             android:layout_width="40dp"
                             android:layout_height="40dp"
                             android:layout_margin="10dp"
-                            android:background="@drawable/instagram" />
+                            android:background="@drawable/instagram"
+                            tools:ignore="ContentDescription" />
 
                         <ImageView
                             android:id="@+id/linkdin"
                             android:layout_width="40dp"
                             android:layout_height="40dp"
                             android:layout_margin="10dp"
-                            android:background="@drawable/linkedin" />
+                            android:background="@drawable/linkedin"
+                            tools:ignore="ContentDescription" />
                     </LinearLayout>
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:text="#CopyRight"
+                        android:text="@string/copyright"
                         android:textColor="@color/white" />
                 </LinearLayout>
             </LinearLayout>

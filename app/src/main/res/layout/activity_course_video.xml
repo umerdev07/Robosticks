@@ -4,29 +4,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/robostick_bg"
     android:orientation="vertical"
     tools:context=".CourseVideo">
+
     <TextView
         android:id="@+id/videoTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_margin="10dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="10dp"
         android:gravity="center"
         android:text="Video Title"
         android:textColor="@color/black"
         android:textSize="30sp"
-        android:textStyle="bold"
- />
+        android:textStyle="bold" />
 
     <VideoView
         android:id="@+id/videoView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:foregroundGravity="center"
- />
+        android:layout_marginTop="30dp"
+        android:foregroundGravity="center" />
 
-
+    <!-- Add ProgressBar for loading -->
+    <ProgressBar
+        android:id="@+id/videoLoading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone" />
 </LinearLayout>

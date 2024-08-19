@@ -8,6 +8,7 @@ import android.util.Log
 import android.view.WindowManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.storage.FirebaseStorage
 import com.maths.robostick.databinding.ActivityMainBinding
 
@@ -17,6 +18,7 @@ class MainActivity : AppCompatActivity() {
     }
     private lateinit var storage: FirebaseStorage
     private lateinit var userEmail: String
+    private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,20 +29,16 @@ class MainActivity : AppCompatActivity() {
         supportActionBar?.hide()
         setContentView(binding.root)
 
-        // Initialize Firebase Storage
         storage = FirebaseStorage.getInstance()
 
-        // Get email from Intent
         userEmail = intent.getStringExtra("email") ?: ""
 
-        // Set email to TextView
         binding.profileEmail.text = userEmail
 
-        // Retrieve and display the profile image
-//        retrieveProfileImage()
-
+        auth = FirebaseAuth.getInstance()
         binding.logout.setOnClickListener {
             showAlertDialog("Do you want to logout?")
+
         }
 
         binding.students.setOnClickListener {
@@ -76,6 +74,8 @@ class MainActivity : AppCompatActivity() {
             .setTitle("Logout")
             .setCancelable(false)
             .setPositiveButton("Yes") { dialog, _ ->
+
+                // Redirect to LoginActivity after logout
                 startActivity(Intent(this, LoginActivity::class.java))
                 finish()
             }
@@ -85,30 +85,6 @@ class MainActivity : AppCompatActivity() {
             .create()
             .show()
     }
-    /*
-        private fun retrieveProfileImage() {
-            // Replace dots with underscores to match the file path in Firebase Storage
-            val formattedEmail = userEmail.replace(".", "_")
-            val filePath = "Profile/$formattedEmail.jpg"
-            val storageReference = storage.reference.child(filePath)
 
-            // Log the file path for debugging
-            Log.d("MainActivity", "Attempting to retrieve image from path: $filePath")
-
-            val localFile = File.createTempFile("tempImage", "jpg")
-
-            storageReference.getFile(localFile).addOnSuccessListener {
-                // Successfully retrieved the file
-                Log.d("MainActivity", "Image successfully retrieved from path: $filePath")
-                val bitmap = BitmapFactory.decodeFile(localFile.absolutePath)
-                binding.profileImage.setImageBitmap(bitmap)
-            }.addOnFailureListener { exception ->
-                // Handle any errors
-                Log.e("MainActivity", "Failed to retrieve image from path: $filePath", exception)
-                Toast.makeText(this, "Image retrieval failed: ${exception.message}", Toast.LENGTH_SHORT).show()
-                binding.profileImage.setImageResource(R.drawable.profile) // Set a default image or handle error
-            }
-        }
-    */
 
 }

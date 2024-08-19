@@ -34,7 +34,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:ignore="RtlSymmetry" />
+                tools:ignore="HardcodedText,RtlSymmetry" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -69,7 +69,7 @@
                         android:layout_marginStart="10dp"
                         android:layout_marginTop="10dp"
                         android:padding="5dp"
-                        android:text="GRADES K-5"
+                        android:text="@string/grades_k_5"
                         android:textColor="@color/black"
                         android:textSize="12sp" />
 
@@ -79,7 +79,7 @@
                         android:layout_marginStart="10dp"
                         android:layout_marginTop="10dp"
                         android:padding="5dp"
-                        android:text="Learning for Ages 5 to 11"
+                        android:text="@string/learning_for_ages_5_to_11"
                         android:textColor="@color/orange"
                         android:textSize="25sp"
                         android:textStyle="bold" />
@@ -88,7 +88,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="200dp"
                         android:layout_margin="10dp"
-                        android:background="@drawable/age5_11" />
+                        android:background="@drawable/age5_11"
+                        tools:ignore="ContentDescription" />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -113,7 +114,7 @@
                         android:layout_marginBottom="15dp"
                         android:background="@color/orange"
                         android:padding="10dp"
-                        android:text="Explore Learning for ages 5-11"
+                        android:text="@string/explore_our_courses"
                         android:textColor="@color/white"
                         android:textStyle="bold"
                         tools:ignore="TextContrastCheck" />
@@ -139,7 +140,7 @@
                         android:layout_marginStart="10dp"
                         android:layout_marginTop="10dp"
                         android:padding="5dp"
-                        android:text="GRADES 6 - 10"
+                        android:text="@string/grades_6_10"
                         android:textColor="@color/black"
                         android:textSize="12sp" />
 
@@ -149,16 +150,18 @@
                         android:layout_marginStart="10dp"
                         android:layout_marginTop="10dp"
                         android:padding="5dp"
-                        android:text="Learning for Ages 11 and Up"
+                        android:text="@string/learning_for_ages_11_and_up"
                         android:textColor="@color/orange"
                         android:textSize="25sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        tools:ignore="TextContrastCheck" />
 
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="200dp"
                         android:layout_margin="10dp"
-                        android:background="@drawable/age11plus" />
+                        android:background="@drawable/age11plus"
+                        tools:ignore="ContentDescription" />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -183,7 +186,7 @@
                         android:layout_marginBottom="15dp"
                         android:background="@color/orange"
                         android:padding="10dp"
-                        android:text="Explore Learning for ages 11+"
+                        android:text="@string/explore_learning_for_ages_11"
                         android:textColor="@color/white"
                         android:textStyle="bold"
                         tools:ignore="TextContrastCheck" />
@@ -208,14 +211,16 @@
                     android:text="Robostick.com"
 
                     android:textColor="@color/white"
-                    android:textSize="15sp" />
+                    android:textSize="15sp"
+                    tools:ignore="HardcodedText,TextContrastCheck" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:text="________________________________________________"
-                    android:textColor="@color/white" />
+                    android:text="@string/line"
+                    android:textColor="@color/white"
+                    tools:ignore="TextContrastCheck" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -227,21 +232,24 @@
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_margin="10dp"
-                        android:background="@drawable/facebook" />
+                        android:background="@drawable/facebook"
+                        tools:ignore="ContentDescription,ImageContrastCheck" />
 
                     <ImageView
                         android:id="@+id/instagram"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_margin="10dp"
-                        android:background="@drawable/instagram" />
+                        android:background="@drawable/instagram"
+                        tools:ignore="ContentDescription,ImageContrastCheck" />
 
                     <ImageView
                         android:id="@+id/linkdin"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_margin="10dp"
-                        android:background="@drawable/linkedin" />
+                        android:background="@drawable/linkedin"
+                        tools:ignore="ContentDescription,ImageContrastCheck" />
                 </LinearLayout>
 
                 <TextView
@@ -249,8 +257,9 @@
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:gravity="center"
-                    android:text="#CopyRight"
-                    android:textColor="@color/white" />
+                    android:text="@string/copyright"
+                    android:textColor="@color/white"
+                    tools:ignore="TextContrastCheck" />
 
 
             </LinearLayout>

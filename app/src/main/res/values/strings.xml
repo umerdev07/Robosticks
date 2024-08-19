@@ -1,8 +1,7 @@
 <resources>
     <string name="app_name">Robostick</string>
     <string name="lorem"><![CDATA[It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. ]]></string>
-    <string name="email_or_username">Email or username*</string>
-    <string name="password">Password*</string>
+    <string name="password">Password</string>
     <string name="login">Login</string>
     <string name="sign_in">Sign In</string>
     <string name="do_you_need">Do you need?</string>
@@ -29,4 +28,37 @@
     <string name="OK">OK</string>
     <string name="otp_verification">OTP Verification</string>
     <string name="instructions">Instructions</string>
+    <string name="original_email">Original Email</string>
+    <string name="copyright">#CopyRight</string>
+    <string name="line">____________________________________________________</string>
+    <string name="robostick_com">www.Robostick.com</string>
+    <string name="support_diversity_in_computing">Support diversity in computing</string>
+    <string name="get_involved">Get involved</string>
+    <string name="teach_your_students">Teach your students</string>
+    <string name="educators">Educators</string>
+    <string name="explore_our_courses">Explore our courses</string>
+    <string name="students">Students</string>
+    <string name="explore_play_and_create">Explore, play, and create</string>
+    <string name="hour_of_code">Hour of Code</string>
+    <string name="all_50_states_support_computer_science">All 50 states support computer science</string>
+    <string name="teachers_use_robostick_com">teachers use Robostick.com</string>
+    <string name="_50">50</string>
+    <string name="_2_7m">2.7M</string>
+    <string name="projects_created_on_robostick_com">projects created on Robostick.com</string>
+    <string name="of_our_students_are_girls">of our students are girls</string>
+    <string name="_311m">311M</string>
+    <string name="_39m">39M</string>
+    <string name="students_on_robostick_com">students on Robostick.com</string>
+    <string name="_92m">92M</string>
+    <string name="discover_new_and_updated_curriculum">Discover new and updated curriculum</string>
+    <string name="logout">Logout</string>
+    <string name="learning_for_ages_11_and_up">Learning for Ages 11 and Up</string>
+    <string name="learning_for_ages_5_to_11">Learning for Ages 5 to 11</string>
+    <string name="video"><![CDATA[Video ->]]></string>
+    <string name="grades_k_5">GRADES K-5</string>
+    <string name="grades_6_10">GRADES 6 - 10</string>
+    <string name="explore_learning_for_ages_11">Explore Learning for ages 11+</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="enter_original_email">Enter original Email</string>
+    <string name="reset">Reset</string>
 </resources>

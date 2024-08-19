@@ -27,7 +27,8 @@
                 android:scaleType="centerCrop"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ContentDescription" />
 
             <ImageView
                 android:id="@+id/imageView6"
@@ -39,7 +40,8 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.498"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/imageView8" />
+                app:layout_constraintTop_toTopOf="@+id/imageView8"
+                tools:ignore="ContentDescription" />
 
             <ImageView
                 android:id="@+id/imageView7"
@@ -50,7 +52,8 @@
                 android:scaleType="centerInside"
                 app:layout_constraintEnd_toEndOf="@+id/imageView6"
                 app:layout_constraintStart_toStartOf="@+id/imageView6"
-                app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+                app:layout_constraintTop_toBottomOf="@+id/imageView6"
+                tools:ignore="ContentDescription" />
 
             <ImageView
                 android:id="@+id/imageView9"
@@ -63,7 +66,8 @@
                 app:layout_constraintEnd_toEndOf="@+id/imageView7"
                 app:layout_constraintStart_toStartOf="@+id/imageView7"
                 app:layout_constraintTop_toBottomOf="@+id/imageView7"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintVertical_bias="0.0"
+                tools:ignore="ContentDescription" />
 
             <ImageView
                 android:id="@+id/imageView10"
@@ -74,7 +78,8 @@
                 android:scaleType="centerInside"
                 app:layout_constraintEnd_toEndOf="@+id/imageView9"
                 app:layout_constraintStart_toStartOf="@+id/imageView9"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ContentDescription" />
 
             <LinearLayout
                 android:id="@+id/linearLayout"
@@ -125,13 +130,14 @@
                     android:layout_width="269dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:gravity="center"
                     android:fontFamily="@font/roboto"
+                    android:gravity="center"
 
                     android:text="@string/lorem"
                     android:textColor="@color/black"
                     android:textSize="14sp"
-                    android:textStyle="normal" />
+                    android:textStyle="normal"
+                    tools:ignore="TextSizeCheck" />
 
                 <EditText
                     android:id="@+id/loginEmailUsername"
@@ -142,7 +148,7 @@
                     android:fontFamily="@font/roboto"
                     android:autofillHints=""
                     android:background="@drawable/edittext_round"
-                    android:hint="@string/email_or_username"
+                    android:hint="@string/email"
                     android:inputType="textEmailAddress"
                     android:padding="20dp"
                     android:textColor="@color/black"
@@ -163,12 +169,23 @@
                     android:textColor="@color/black"
                     tools:ignore="SpeakableTextPresentCheck,TextContrastCheck,TextFields,TouchTargetSizeCheck" />
 
+                <TextView
+                    android:id="@+id/forgottenPassword"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Forgotten Password?"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:textColor="@color/black"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginTop="15dp"
+                    tools:ignore="HardcodedText" />
                 <Button
                     android:id="@+id/login"
                     android:layout_width="300dp"
                     android:layout_height="69dp"
                     android:layout_gravity="center"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="15dp"
                     android:background="@color/orange"
                     android:fontFamily="@font/roboto"
                     android:text="@string/login"

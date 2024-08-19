@@ -36,7 +36,7 @@
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    tools:ignore="ContentDescription" />
+                    tools:ignore="ContentDescription,ImageContrastCheck" />
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/circleProfileImageView"
@@ -76,7 +76,7 @@
                 android:layout_marginTop="10dp"
                 android:autofillHints=""
                 android:background="@drawable/edittext_round"
-                android:hint="@string/email_or_username"
+                android:hint="@string/original_email"
                 android:inputType="textEmailAddress"
                 android:padding="20dp"
                 android:textColor="@color/black"

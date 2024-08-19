@@ -14,13 +14,14 @@
         android:layout_margin="10dp"
         android:layout_marginTop="28dp"
         android:gravity="center"
-        android:text="Learning for Ages 5 to 11"
+        android:text="@string/learning_for_ages_5_to_11"
         android:textColor="@color/orange"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TextContrastCheck" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclarView"

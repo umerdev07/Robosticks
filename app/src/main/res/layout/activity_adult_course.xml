@@ -11,23 +11,23 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
         android:layout_marginTop="28dp"
         android:gravity="center"
-        android:text="Learning for Ages 11 and Up"
+        android:text="@string/learning_for_ages_11_and_up"
         android:textColor="@color/orange"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TextContrastCheck" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclarView"
         android:layout_width="403dp"
         android:layout_height="671dp"
         android:padding="20dp"
-        android:layout_marginTop="11dp"
+        android:layout_marginTop="0dp"
         tools:listitem="@layout/coureseslist"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

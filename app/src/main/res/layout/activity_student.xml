@@ -114,7 +114,7 @@
                         android:layout_marginBottom="15dp"
                         android:background="@color/orange"
                         android:padding="10dp"
-                        android:text="@string/explore_our_courses"
+                        android:text="Explore Learning for age 5 - 11"
                         android:textColor="@color/white"
                         android:textStyle="bold"
                         tools:ignore="TextContrastCheck" />

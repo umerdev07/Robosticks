@@ -40,7 +40,7 @@ class AdultCourseActivity : AppCompatActivity() {
     }
 
     private fun getCourseData() {
-        databaseReference = FirebaseDatabase.getInstance().getReference("Courses2")
+        databaseReference = FirebaseDatabase.getInstance().getReference("AdultCourses")
 
         databaseReference.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {

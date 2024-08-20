@@ -11,10 +11,10 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:scrollbarThumbVertical="@drawable/scrollbar_thumb"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -42,18 +42,9 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/profileEmail"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:fontFamily="@font/roboto"
-                    android:textColor="@color/white"
-                    android:textSize="15sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="30dp"
+                    android:layout_marginTop="40dp"
                     android:fontFamily="@font/roboto"
                     android:gravity="center"
                     android:text="@string/discover_new_and_updated_curriculum"
@@ -75,14 +66,13 @@
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Learn more here!"
-                    android:textColor="@color/orange"
-                    android:padding="10dp"
                     android:layout_gravity="center"
                     android:layout_marginTop="20dp"
                     android:background="@color/black"
-                    android:textStyle="bold"
-                    />
+                    android:padding="10dp"
+                    android:text="Learn more here!"
+                    android:textColor="@color/orange"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
@@ -431,9 +421,9 @@
                     android:id="@+id/footer"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
                     android:background="@color/orange"
                     android:gravity="center"
-                    android:layout_marginTop="20dp"
                     android:orientation="vertical"
                     android:padding="16dp">
 
@@ -442,8 +432,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/robostick_com"
                         android:textColor="@color/white"
-                        android:textSize="15sp"
-                        />
+                        android:textSize="15sp" />
 
                     <TextView
                         android:layout_width="match_parent"

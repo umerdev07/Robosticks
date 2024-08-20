@@ -31,10 +31,6 @@ class MainActivity : AppCompatActivity() {
 
         storage = FirebaseStorage.getInstance()
 
-        userEmail = intent.getStringExtra("email") ?: ""
-
-        binding.profileEmail.text = userEmail
-
         auth = FirebaseAuth.getInstance()
         binding.logout.setOnClickListener {
             showAlertDialog("Do you want to logout?")

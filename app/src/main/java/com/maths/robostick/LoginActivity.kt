@@ -50,12 +50,9 @@ class LoginActivity : AppCompatActivity() {
                     .addOnCompleteListener(this) { task ->
                         if (task.isSuccessful) {
                             Toast.makeText(this, "Login Successful", Toast.LENGTH_SHORT).show()
-
-                            val intent = Intent(this, MainActivity::class.java).apply {
-                                    putExtra("email", emailUser)
-                            }
-                            startActivity(intent)
+                            startActivity(Intent(this , MainActivity::class.java))
                             finish()
+
                         } else {
                             try{
                                 throw  task.exception ?: Exception("Unknown Error")
@@ -64,7 +61,6 @@ class LoginActivity : AppCompatActivity() {
                             }catch (e :Exception){
                                 showAlertDialog("Login Failed! Connect your network")
                             }
-
                         }
                     }
             }

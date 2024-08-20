@@ -51,7 +51,7 @@ class MediaDisplayActivity2 : AppCompatActivity() {
     }
 
     private fun getMediaData(topicKey: String) {
-        databaseReference = FirebaseDatabase.getInstance().getReference("Courses2").child(topicKey).child("media")
+        databaseReference = FirebaseDatabase.getInstance().getReference("AdultCourses").child(topicKey).child("media")
 
         databaseReference.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
@@ -61,7 +61,9 @@ class MediaDisplayActivity2 : AppCompatActivity() {
                     // List to store SlideModel objects
                     val imageList = ArrayList<SlideModel>()
                     videoUrl = snapshot.child("videoUrl").getValue(String::class.java)
-                    for (mediaSnapshot in snapshot.children) {
+
+                    val mediaItems = snapshot.children.sortedBy { it.key?.toInt() ?: 0 }
+                    for (mediaSnapshot in mediaItems) {
                         val mediaUrl = mediaSnapshot.child("mediaUrl").getValue(String::class.java)
                         val mediaTile = mediaSnapshot.child("title").getValue(String::class.java)
                         if (mediaUrl != null) {

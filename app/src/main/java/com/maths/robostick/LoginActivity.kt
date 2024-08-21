@@ -52,7 +52,6 @@ class LoginActivity : AppCompatActivity() {
                             Toast.makeText(this, "Login Successful", Toast.LENGTH_SHORT).show()
                             startActivity(Intent(this , MainActivity::class.java))
                             finish()
-
                         } else {
                             try{
                                 throw  task.exception ?: Exception("Unknown Error")

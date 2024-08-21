@@ -1,6 +1,7 @@
 package com.maths.robostick
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -36,10 +37,9 @@ class MediaDiaplayActivity : AppCompatActivity() {
 
         binding.videoBtn.setOnClickListener {
             if (videoUrl != null) {
-                // Pass video URL to ChildCourseVideo activity
-                val intent = Intent(this@MediaDiaplayActivity, CourseVideo::class.java)
-                intent.putExtra("VIDEO_URL", videoUrl)
-                intent.putExtra("topicname" , topicKey)
+
+                val intent = Intent(Intent.ACTION_VIEW)
+                intent.data = Uri.parse(videoUrl)
                 startActivity(intent)
             } else {
                 Toast.makeText(this@MediaDiaplayActivity, "No video available for this topic", Toast.LENGTH_SHORT).show()

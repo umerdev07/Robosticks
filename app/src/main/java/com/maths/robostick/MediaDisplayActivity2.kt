@@ -1,6 +1,7 @@
 package com.maths.robostick
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -16,14 +17,13 @@ import com.maths.robostick.databinding.ActivityMediaDisplay2Binding
 
 class MediaDisplayActivity2 : AppCompatActivity() {
 
-
     private val binding: ActivityMediaDisplay2Binding by lazy {
         ActivityMediaDisplay2Binding.inflate(layoutInflater)
     }
     private lateinit var databaseReference: DatabaseReference
     private lateinit var mediaArrayList: ArrayList<MediaClass>
     private lateinit var imageSlider: ImageSlider
-    private var videoUrl :String?=null
+    private var videoUrl: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,10 +37,8 @@ class MediaDisplayActivity2 : AppCompatActivity() {
 
         binding.videoBtn.setOnClickListener {
             if (videoUrl != null) {
-                // Pass video URL to ChildCourseVideo activity
-                val intent = Intent(this@MediaDisplayActivity2, CourseVideo::class.java)
-                intent.putExtra("VIDEO_URL", videoUrl)
-                intent.putExtra("topicname" , topicKey)
+                val intent = Intent(Intent.ACTION_VIEW)
+                intent.data = Uri.parse(videoUrl)
                 startActivity(intent)
             } else {
                 Toast.makeText(this@MediaDisplayActivity2, "No video available for this topic", Toast.LENGTH_SHORT).show()
@@ -58,17 +56,22 @@ class MediaDisplayActivity2 : AppCompatActivity() {
                 if (snapshot.exists()) {
                     mediaArrayList.clear()
 
-                    // List to store SlideModel objects
                     val imageList = ArrayList<SlideModel>()
-                    videoUrl = snapshot.child("videoUrl").getValue(String::class.java)
 
-                    val mediaItems = snapshot.children.sortedBy { it.key?.toInt() ?: 0 }
-                    for (mediaSnapshot in mediaItems) {
-                        val mediaUrl = mediaSnapshot.child("mediaUrl").getValue(String::class.java)
-                        val mediaTile = mediaSnapshot.child("title").getValue(String::class.java)
-                        if (mediaUrl != null) {
-                            mediaArrayList.add(MediaClass(mediaUrl))
-                            imageList.add(SlideModel(mediaUrl , mediaTile , ScaleTypes.FIT))
+                    // Extract video URL if available
+                    videoUrl = snapshot.child("video").getValue(String::class.java)
+
+                    // Loop through all media items
+                    for (mediaSnapshot in snapshot.children) {
+                        if (mediaSnapshot.key != "video") {  // Skip the 'video' node
+                            val mediaUrl = mediaSnapshot.child("mediaUrl").getValue(String::class.java)
+                            val mediaTitle = mediaSnapshot.child("title").getValue(String::class.java)
+
+                            // Add media items to the list
+                            if (mediaUrl != null) {
+                                mediaArrayList.add(MediaClass(title = mediaTitle, mediaUrl = mediaUrl))
+                                imageList.add(SlideModel(mediaUrl, mediaTitle, ScaleTypes.FIT))
+                            }
                         }
                     }
 

@@ -12,11 +12,11 @@
             android:layout_height="100dp"
             android:layout_margin="23dp"
             android:background="@drawable/roundvideobtn"
-            android:padding="30dp"
-            android:text="@string/video"
+            android:padding="20dp"
+            android:text="@string/click_here_to_watch_tutorial"
             android:textAlignment="textStart"
             android:textColor="@color/white"
-            android:textSize="25sp"
+            android:textSize="20sp"
             android:textStyle="bold"
             tools:ignore="TextContrastCheck" />
 

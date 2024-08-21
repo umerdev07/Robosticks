@@ -31,6 +31,12 @@ private val binding : ActivityStudentBinding by lazy {
             startActivity(Intent(applicationContext , AdultCourseActivity::class.java))
         }
 
+        binding.web.setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse("https://robosticks.com/")
+            startActivity(intent)
+        }
+
         binding.facebook.setOnClickListener {
             val intent = Intent(Intent.ACTION_VIEW)
             intent.data = Uri.parse("https://web.facebook.com/RoboSticks/")

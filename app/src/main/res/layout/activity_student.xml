@@ -27,6 +27,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:paddingStart="10dp"
+                android:fontFamily="@font/roboto"
                 android:text="Find the right learning opportunity for you!"
                 android:textColor="@color/orange"
                 android:textSize="35sp"
@@ -41,6 +42,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:gravity="left"
+                android:fontFamily="@font/roboto"
                 android:paddingStart="10dp"
                 android:text="@string/lorem"
                 android:textColor="@color/black"
@@ -68,6 +70,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
                         android:layout_marginTop="10dp"
+                        android:fontFamily="@font/roboto"
                         android:padding="5dp"
                         android:text="@string/grades_k_5"
                         android:textColor="@color/black"
@@ -78,6 +81,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
                         android:layout_marginTop="10dp"
+                        android:fontFamily="@font/roboto"
                         android:padding="5dp"
                         android:text="@string/learning_for_ages_5_to_11"
                         android:textColor="@color/orange"
@@ -96,6 +100,7 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
                         android:gravity="left"
+                        android:fontFamily="@font/roboto"
                         android:paddingStart="10dp"
                         android:text="@string/lorem"
                         android:textColor="@color/black"
@@ -112,6 +117,7 @@
                         android:layout_gravity="center"
                         android:layout_marginTop="20dp"
                         android:layout_marginBottom="15dp"
+                        android:fontFamily="@font/roboto"
                         android:background="@color/orange"
                         android:padding="10dp"
                         android:text="Explore Learning for age 5 - 11"
@@ -141,6 +147,7 @@
                         android:layout_marginTop="10dp"
                         android:padding="5dp"
                         android:text="@string/grades_6_10"
+                        android:fontFamily="@font/roboto"
                         android:textColor="@color/black"
                         android:textSize="12sp" />
 
@@ -154,6 +161,7 @@
                         android:textColor="@color/orange"
                         android:textSize="25sp"
                         android:textStyle="bold"
+                        android:fontFamily="@font/roboto"
                         tools:ignore="TextContrastCheck" />
 
                     <ImageView
@@ -172,6 +180,7 @@
                         android:text="@string/lorem"
                         android:textColor="@color/black"
                         android:textSize="15sp"
+                        android:fontFamily="@font/roboto"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
@@ -185,6 +194,7 @@
                         android:layout_marginTop="20dp"
                         android:layout_marginBottom="15dp"
                         android:background="@color/orange"
+                        android:fontFamily="@font/roboto"
                         android:padding="10dp"
                         android:text="@string/explore_learning_for_ages_11"
                         android:textColor="@color/white"
@@ -205,11 +215,12 @@
                 android:padding="16dp">
 
                 <TextView
+                    android:id="@+id/web"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="top |center"
-                    android:text="Robostick.com"
-
+                    android:text="@string/robostick_com"
+                    android:fontFamily="@font/roboto"
                     android:textColor="@color/white"
                     android:textSize="15sp"
                     tools:ignore="HardcodedText,TextContrastCheck" />
@@ -257,6 +268,7 @@
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:gravity="center"
+                    android:fontFamily="@font/roboto"
                     android:text="@string/copyright"
                     android:textColor="@color/white"
                     tools:ignore="TextContrastCheck" />

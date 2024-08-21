@@ -5,19 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/robostick_bg"
-    tools:context=".ChildCourseActivity">
+    tools:context=".AdultCourseActivity">
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="10dp"
         android:gravity="center"
         android:text="@string/learning_for_ages_5_to_11"
         android:textColor="@color/orange"
         android:textSize="30sp"
         android:textStyle="bold"
+        android:fontFamily="@font/roboto"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -25,13 +25,13 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclarView"
-        android:layout_width="403dp"
-        android:layout_height="671dp"
+        android:layout_width="match_parent"
+
+        android:layout_height="760dp"
         android:padding="20dp"
-        android:layout_marginTop="11dp"
-        tools:listitem="@layout/coureseslist"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        tools:listitem="@layout/coureseslist" />
 </androidx.constraintlayout.widget.ConstraintLayout>

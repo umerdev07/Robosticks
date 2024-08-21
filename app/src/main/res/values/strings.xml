@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Robostick</string>
+    <string name="app_name">Robosticks</string>
     <string name="lorem"><![CDATA[It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. ]]></string>
     <string name="password">Password</string>
     <string name="login">Login</string>
@@ -31,7 +31,7 @@
     <string name="original_email">Original Email</string>
     <string name="copyright">#CopyRight</string>
     <string name="line">____________________________________________________</string>
-    <string name="robostick_com">www.Robostick.com</string>
+    <string name="robostick_com">www.robostick.com</string>
     <string name="support_diversity_in_computing">Support diversity in computing</string>
     <string name="get_involved">Get involved</string>
     <string name="teach_your_students">Teach your students</string>
@@ -61,4 +61,5 @@
     <string name="reset_password">Reset Password</string>
     <string name="enter_original_email">Enter original Email</string>
     <string name="reset">Reset</string>
+    <string name="click_here_to_watch_tutorial">Click here to watch tutorial</string>
 </resources>

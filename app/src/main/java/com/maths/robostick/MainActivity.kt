@@ -37,6 +37,12 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+        binding.web.setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse("https://robosticks.com/")
+            startActivity(intent)
+        }
+
         binding.students.setOnClickListener {
             Log.d("MainActivity", "Students button clicked")
             startActivity(Intent(this, StudentActivity::class.java))

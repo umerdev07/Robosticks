@@ -480,7 +480,8 @@
                         android:gravity="center"
                         android:layout_marginTop="5dp"
                         android:fontFamily="@font/roboto"
-                        android:text="All Rights Reserved."
+                        android:text="@string/all_rights_reserved"
+                        android:padding="5dp"
                         android:background="#48000000"
                         android:textColor="@color/white" />
                 </LinearLayout>

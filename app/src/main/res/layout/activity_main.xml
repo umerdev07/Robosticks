@@ -478,8 +478,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
+                        android:layout_marginTop="5dp"
                         android:fontFamily="@font/roboto"
-                        android:text="@string/copyright"
+                        android:text="All Rights Reserved."
+                        android:background="#48000000"
                         android:textColor="@color/white" />
                 </LinearLayout>
             </LinearLayout>

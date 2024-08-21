@@ -268,6 +268,8 @@
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:background="#48000000"
                     android:fontFamily="@font/roboto"
                     android:text="@string/copyright"
                     android:textColor="@color/white"

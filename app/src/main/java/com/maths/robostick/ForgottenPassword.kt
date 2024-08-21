@@ -14,6 +14,7 @@ class ForgottenPassword : DialogFragment() {
         ActivityForgottenPasswordBinding.inflate(layoutInflater)
     }
     private lateinit var auth: FirebaseAuth
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -33,14 +34,19 @@ class ForgottenPassword : DialogFragment() {
         }
 
         binding.Reset.setOnClickListener {
-            val password = binding.Emails.text.toString()
-            auth.sendPasswordResetEmail(password)
-                .addOnSuccessListener {
-                    Toast.makeText(context, "Please check Email", Toast.LENGTH_LONG).show()
-                }
-                .addOnFailureListener {
-                    Toast.makeText(context, it.toString(), Toast.LENGTH_SHORT).show()
-                }
+            val email = binding.Emails.text.toString().trim()
+            if (email.isNotEmpty()) {
+                auth.sendPasswordResetEmail(email)
+                    .addOnCompleteListener { task ->
+                        if (task.isSuccessful) {
+                            Toast.makeText(context, "Please check your email.", Toast.LENGTH_LONG).show()
+                        } else {
+                            Toast.makeText(context, "Error: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
+                        }
+                    }
+            } else {
+                Toast.makeText(context, "Please enter your email address.", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 }

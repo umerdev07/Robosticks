@@ -2,7 +2,6 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("com.google.gms.google-services")
-    id ("kotlin-kapt")
 }
 
 android {
@@ -46,8 +45,7 @@ dependencies {
     implementation("androidx.appcompat:appcompat:1.7.0")
     implementation("com.google.android.material:material:1.12.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
-    implementation ("com.github.bumptech.glide:glide:4.15.1") // Use the latest version
-    kapt ("com.github.bumptech.glide:compiler:4.15.1") // Use the latest version
+    implementation ("com.github.ybq:Android-SpinKit:1.4.0")
     // Import the BoM for the Firebase platform
     implementation(platform("com.google.firebase:firebase-bom:33.1.2"))
 

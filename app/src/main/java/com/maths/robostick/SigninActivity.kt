@@ -60,7 +60,6 @@
                 startActivity(Intent(applicationContext, LoginActivity::class.java))
                 finish()
             }
-
             binding.signUp.setOnClickListener {
                 val phoneNumber = binding.signinPhoneNumber.text.toString()
                 val name = binding.name.text.toString()
@@ -72,34 +71,37 @@
                 // Check if any field is empty
                 if (name.isEmpty() || email.isEmpty() || password.isEmpty() || phoneNumber.isEmpty() || schoolName.isEmpty() || grade.isEmpty()) {
                     showAlertDialog("Fill all Credential")
-                }
-                // Check if profile image is selected
-                else if (selectedImg == null) {
+                } else if (selectedImg == null) {
                     Toast.makeText(applicationContext, "Please select your profile image", Toast.LENGTH_SHORT).show()
-                }
-
-                else if (phoneNumber.isNotEmpty()) {
-                    val formattedNumber = formatPhoneNumber(phoneNumber)
-                    if (formattedNumber != null) {
-                        // Create a new instance of PhoneActivity with formatted phone number
-                        val phoneDialog = PhoneActivity.newInstance(formattedNumber).apply {
-                            setOnGameResetListener(object : PhoneActivity.OnGameResetListener {
-                                override fun onGameReset() {
-                                    uploadInfo() // Call uploadInfo() on successful phone verification
-                                }
-                            })
-                        }
-                        // Show the dialog
-                        phoneDialog.show(supportFragmentManager, "PhoneDialog")
-                    } else {
-                        Toast.makeText(this, "Invalid phone number format", Toast.LENGTH_SHORT).show()
-                    }
                 } else {
-                    Toast.makeText(this, "Please enter a phone number", Toast.LENGTH_SHORT).show()
+                    checkIfEmailExists(email) { exists ->
+                        if (exists) {
+                            showAlertDialog("Email already exists. Please log in or use another email.")
+                        } else {
+                            // Proceed with phone number validation and user creation
+                            if (phoneNumber.isNotEmpty()) {
+                                val formattedNumber = formatPhoneNumber(phoneNumber)
+                                if (formattedNumber != null) {
+                                    // Create a new instance of PhoneActivity with formatted phone number
+                                    val phoneDialog = PhoneActivity.newInstance(formattedNumber).apply {
+                                        setOnGameResetListener(object : PhoneActivity.OnGameResetListener {
+                                            override fun onGameReset() {
+                                                uploadInfo() // Call uploadInfo() on successful phone verification
+                                            }
+                                        })
+                                    }
+                                    // Show the dialog
+                                    phoneDialog.show(supportFragmentManager, "PhoneDialog")
+                                } else {
+                                    Toast.makeText(this, "Invalid phone number format", Toast.LENGTH_SHORT).show()
+                                }
+                            } else {
+                                Toast.makeText(this, "Please enter a phone number", Toast.LENGTH_SHORT).show()
+                            }
+                        }
+                    }
                 }
             }
-
-
 
         }
         private fun formatPhoneNumber(phoneNumber: String): String? {
@@ -125,8 +127,8 @@
 
 
             progressdialog.setMessage("Save Data...")
-            progressdialog.show()
-
+            val dialog = progressdialog.create()
+            dialog.show()
             val reference = storage.reference.child("Profile").child(System.currentTimeMillis().toString())
             selectedImg?.let { imgUri ->
                 reference.putFile(imgUri).addOnCompleteListener { uploadTask ->
@@ -142,6 +144,7 @@
                                         finish()
                                     } else {
                                         showAlertDialog("Failed to Signup: ${task.exception?.message}")
+                                        dialog.dismiss()
                                     }
                                 }
                         }
@@ -243,4 +246,21 @@
                 }
             }
         }
+
+        private fun checkIfEmailExists(email: String, callback: (exists: Boolean) -> Unit) {
+            val auth = FirebaseAuth.getInstance()
+            auth.fetchSignInMethodsForEmail(email)
+                .addOnCompleteListener { task ->
+                    if (task.isSuccessful) {
+                        val signInMethods = task.result?.signInMethods
+                        callback(!signInMethods.isNullOrEmpty())
+                    } else {
+                        // Handle the error
+                        Toast.makeText(this, "Error checking email existence", Toast.LENGTH_SHORT).show()
+                        callback(false)
+                    }
+                }
+        }
+
+
     }

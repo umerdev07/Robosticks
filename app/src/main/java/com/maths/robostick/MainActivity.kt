@@ -13,11 +13,10 @@ import com.google.firebase.storage.FirebaseStorage
 import com.maths.robostick.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-    private val binding : ActivityMainBinding by lazy {
+    private val binding: ActivityMainBinding by lazy {
         ActivityMainBinding.inflate(layoutInflater)
     }
     private lateinit var storage: FirebaseStorage
-    private lateinit var userEmail: String
     private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,17 +29,16 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         storage = FirebaseStorage.getInstance()
-
         auth = FirebaseAuth.getInstance()
+
+        // Handle logout
         binding.logout.setOnClickListener {
             showAlertDialog("Do you want to logout?")
-
         }
 
+        // Other buttons setup
         binding.web.setOnClickListener {
-            val intent = Intent(Intent.ACTION_VIEW)
-            intent.data = Uri.parse("https://robosticks.com/")
-            startActivity(intent)
+            openUrl("https://robosticks.com/")
         }
 
         binding.students.setOnClickListener {
@@ -48,25 +46,16 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, StudentActivity::class.java))
         }
 
-
         binding.facebook.setOnClickListener {
-            try {
-                val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://web.facebook.com/RoboSticks/"))
-                startActivity(intent)
-            } catch (e: Exception) {
-                Toast.makeText(this, "Unable to open link", Toast.LENGTH_SHORT).show()
-            }
+            openUrl("https://web.facebook.com/RoboSticks/")
         }
 
         binding.instagram.setOnClickListener {
-            val intent = Intent(Intent.ACTION_VIEW)
-            intent.data = Uri.parse("https://www.instagram.com/robosticksofficial/")
-            startActivity(intent)
+            openUrl("https://www.instagram.com/robosticksofficial/")
         }
+
         binding.linkdin.setOnClickListener {
-            val intent = Intent(Intent.ACTION_VIEW)
-            intent.data = Uri.parse("https://www.linkedin.com/company/robosticks/")
-            startActivity(intent)
+            openUrl("https://www.linkedin.com/company/robosticks/")
         }
     }
 
@@ -76,17 +65,29 @@ class MainActivity : AppCompatActivity() {
             .setTitle("Logout")
             .setCancelable(false)
             .setPositiveButton("Yes") { dialog, _ ->
-
-                // Redirect to LoginActivity after logout
-                startActivity(Intent(this, LoginActivity::class.java))
-                finish()
+                auth.signOut() // Sign out from FirebaseAuth
+                navigateToLogin() // Navigate to LoginActivity
             }
             .setNegativeButton("No") { dialog, _ ->
-                dialog.dismiss()
+                dialog.dismiss() // Dismiss the dialog
             }
             .create()
             .show()
     }
 
+    private fun navigateToLogin() {
+        val intent = Intent(this, LoginActivity::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        startActivity(intent)
+        finish() // Finish current activity to prevent back navigation
+    }
 
+    private fun openUrl(url: String) {
+        try {
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+            startActivity(intent)
+        } catch (e: Exception) {
+            Toast.makeText(this, "Unable to open link", Toast.LENGTH_SHORT).show()
+        }
+    }
 }

@@ -3,13 +3,14 @@ package com.maths.robostick
 import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.view.WindowManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
-import com.google.firebase.auth.FirebaseUser
 import com.maths.robostick.databinding.ActivityLoginBinding
+
 
 class LoginActivity : AppCompatActivity() {
     private val binding: ActivityLoginBinding by lazy {
@@ -26,8 +27,6 @@ class LoginActivity : AppCompatActivity() {
         setContentView(binding.root)
         auth = FirebaseAuth.getInstance()
 
-//        saveLoginState()
-
         binding.signUp.setOnClickListener {
             startActivity(Intent(applicationContext, SigninActivity::class.java))
             finish()
@@ -38,6 +37,8 @@ class LoginActivity : AppCompatActivity() {
             dialogFragment.show(supportFragmentManager, "ForgottenPasswordDialog")
         }
 
+        val spinKitView = binding.spinKit
+        spinKitView.visibility = View.GONE
 
         binding.login.setOnClickListener {
             val emailUser = binding.loginEmailUsername.text.toString()
@@ -46,8 +47,10 @@ class LoginActivity : AppCompatActivity() {
             if (emailUser.isEmpty() || loginPassword.isEmpty()) {
                 showAlertDialog("Both fields must be filled")
             } else {
+                spinKitView.visibility = View.VISIBLE
                 auth.signInWithEmailAndPassword(emailUser, loginPassword)
                     .addOnCompleteListener(this) { task ->
+                        spinKitView.visibility = View.GONE
                         if (task.isSuccessful) {
                             Toast.makeText(this, "Login Successful", Toast.LENGTH_SHORT).show()
                             startActivity(Intent(this , MainActivity::class.java))
@@ -65,18 +68,6 @@ class LoginActivity : AppCompatActivity() {
             }
         }
     }
-    private fun saveLoginState() {
-        val currentUser: FirebaseUser? = auth.currentUser
-        if (currentUser != null) {
-            // User is logged in, navigate to MainActivity
-            startActivity(Intent(this, LoginActivity::class.java))
-        } else {
-            // User is not logged in, stay on LoginActivity
-            startActivity(Intent(this, MainActivity::class.java))
-        }
-        finish() // Close the activity
-    }
-
 
      private fun showAlertDialog(message: String) {
         AlertDialog.Builder(this)

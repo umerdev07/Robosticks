@@ -2,6 +2,7 @@ package com.maths.robostick
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.view.WindowManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -31,6 +32,10 @@ class AdultCourseActivity : AppCompatActivity() {
         )
         supportActionBar?.hide()
 
+        val spinKitView = binding.spinKit
+        spinKitView.visibility = View.GONE
+
+
         courseRecyclerView = binding.recyclarView
         courseRecyclerView.layoutManager = LinearLayoutManager(this)
         courseRecyclerView.setHasFixedSize(true)
@@ -41,7 +46,7 @@ class AdultCourseActivity : AppCompatActivity() {
 
     private fun getCourseData() {
         databaseReference = FirebaseDatabase.getInstance().getReference("AdultCourses")
-
+        binding.spinKit.visibility = View.VISIBLE
         databaseReference.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 if (snapshot.exists()) {
@@ -67,7 +72,7 @@ class AdultCourseActivity : AppCompatActivity() {
                             startActivity(intent)
                         }
                     }
-
+                    binding.spinKit.visibility = View.GONE
                 }
             }
 

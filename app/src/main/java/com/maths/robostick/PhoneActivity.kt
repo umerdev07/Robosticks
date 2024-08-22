@@ -40,6 +40,8 @@ class PhoneActivity : DialogFragment() {
         } else {
             Toast.makeText(requireContext(), "Phone number is missing", Toast.LENGTH_SHORT).show()
         }
+        val spinKitView = binding.spinKit
+        spinKitView.visibility = View.GONE
 
         binding.verify.setOnClickListener {
             val code = binding.OtpTextView.text.toString()
@@ -55,12 +57,14 @@ class PhoneActivity : DialogFragment() {
     }
 
     private fun startPhoneNumberVerification(phoneNumber: String) {
+        binding.spinKit.visibility = View.VISIBLE
         val callback = object : PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
             override fun onVerificationCompleted(credential: PhoneAuthCredential) {
                 signInWithPhoneAuthCredential(credential)
             }
 
             override fun onVerificationFailed(e: FirebaseException) {
+                binding.spinKit.visibility = View.GONE
                 Toast.makeText(requireContext(), "Verification failed: ${e.message}", Toast.LENGTH_SHORT).show()
             }
 
@@ -85,8 +89,11 @@ class PhoneActivity : DialogFragment() {
     }
 
     private fun signInWithPhoneAuthCredential(credential: PhoneAuthCredential) {
+        binding.spinKit.visibility = View.VISIBLE
         FirebaseAuth.getInstance().signInWithCredential(credential)
+
             .addOnCompleteListener(requireActivity()) { task ->
+                binding.spinKit.visibility = View.GONE
                 if (task.isSuccessful) {
                     onGameResetListener?.onGameReset()
                     dismiss()  // Close the dialog
@@ -95,6 +102,7 @@ class PhoneActivity : DialogFragment() {
                     Toast.makeText(requireContext(), "Verification Failed", Toast.LENGTH_SHORT).show()
                 }
             }
+
     }
 
     fun setOnGameResetListener(listener: OnGameResetListener) {

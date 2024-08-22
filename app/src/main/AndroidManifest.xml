@@ -35,9 +35,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".ForgottenPassword"
-            android:exported="false" />
+
         <activity
             android:name=".MediaDisplayActivity2"
             android:exported="false" />
@@ -55,9 +53,6 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="false" />
-        <activity
-            android:name=".PhoneActivity"
             android:exported="false" />
         <activity
             android:name=".SigninActivity"

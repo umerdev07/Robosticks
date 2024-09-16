@@ -8,15 +8,15 @@
 
         <Button
             android:id="@+id/videoBtn"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_margin="23dp"
             android:background="@drawable/roundvideobtn"
             android:padding="20dp"
             android:text="@string/click_here_to_watch_tutorial"
             android:textAlignment="textStart"
             android:textColor="@color/white"
-            android:textSize="20sp"
+            android:textSize="@dimen/_20ssp"
             android:textStyle="bold"
             tools:ignore="TextContrastCheck" />
 
@@ -30,7 +30,7 @@
             android:padding="6dp"
             android:text="@string/instructions"
             android:textColor="@color/black"
-            android:textSize="25sp"
+            android:textSize="@dimen/_25ssp"
             android:textStyle="bold"
             tools:ignore="RtlHardcoded" />
 

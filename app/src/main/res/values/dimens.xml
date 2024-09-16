@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Scale-independent pixels (ssp) for text dimensions -->
+    <dimen name="_400ssp">400sp</dimen>
+
+    <!-- Scale-independent pixels (sdp) for view sizes and padding/margins -->
+    <dimen name="_500sdp">500dp</dimen>
+    <dimen name="_10sdp">10dp</dimen>
+
+    <!-- Standard padding values -->
+    <dimen name="padding_20dp">20dp</dimen>
+
+    <!-- Text sizes -->
+    <dimen name="text_size_30sp">30sp</dimen>
+</resources>

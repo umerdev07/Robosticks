@@ -195,6 +195,7 @@
                 data?.data?.let { uri ->
                     selectedImg = uri
                     binding.circleProfileImageView.setImageURI(selectedImg)
+
                 }
             }
         }

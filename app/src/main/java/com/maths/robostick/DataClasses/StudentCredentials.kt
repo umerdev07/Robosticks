@@ -1,4 +1,4 @@
-package com.maths.robostick
+package com.maths.robostick.DataClasses
 
 data class StudentCredentials(val name : String , val emailOrUsername : String,
                               val password :String , val fatherName :String , val phoneNumber :String,

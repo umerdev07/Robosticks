@@ -1,4 +1,4 @@
-package com.maths.robostick
+package com.maths.robostick.Students
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -24,7 +24,7 @@ private val binding : ActivityStudentBinding by lazy {
         setContentView(binding.root)
 
         binding.kidage.setOnClickListener {
-            startActivity(Intent(applicationContext ,ChildCourseActivity::class.java))
+            startActivity(Intent(applicationContext , ChildCourseActivity::class.java))
         }
 
         binding.age11Plus.setOnClickListener {

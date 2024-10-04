@@ -1,4 +1,4 @@
-    package com.maths.robostick
+    package com.maths.robostick.UserManagment
 
     import android.Manifest
     import android.app.AlertDialog
@@ -18,6 +18,7 @@
     import com.google.firebase.storage.FirebaseStorage
     import com.google.i18n.phonenumbers.NumberParseException
     import com.google.i18n.phonenumbers.PhoneNumberUtil
+    import com.maths.robostick.DataClasses.StudentCredentials
     import com.maths.robostick.databinding.ActivitySigninBinding
 
     @Suppress("DEPRECATION")
@@ -84,7 +85,8 @@
                                 if (formattedNumber != null) {
                                     // Create a new instance of PhoneActivity with formatted phone number
                                     val phoneDialog = PhoneActivity.newInstance(formattedNumber).apply {
-                                        setOnGameResetListener(object : PhoneActivity.OnGameResetListener {
+                                        setOnGameResetListener(object :
+                                            PhoneActivity.OnGameResetListener {
                                             override fun onGameReset() {
                                                 uploadInfo() // Call uploadInfo() on successful phone verification
                                             }

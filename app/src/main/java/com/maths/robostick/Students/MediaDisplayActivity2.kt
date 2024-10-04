@@ -1,4 +1,4 @@
-package com.maths.robostick
+package com.maths.robostick.Students
 
 import android.content.Intent
 import android.net.Uri
@@ -14,6 +14,7 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.maths.robostick.DataClasses.MediaClass
 import com.maths.robostick.databinding.ActivityMediaDisplay2Binding
 
 class MediaDisplayActivity2 : AppCompatActivity() {

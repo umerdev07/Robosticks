@@ -1,4 +1,4 @@
-package com.maths.robostick
+package com.maths.robostick.Students
 
 import android.content.Intent
 import android.os.Bundle
@@ -13,6 +13,8 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.maths.robostick.DataClasses.AdapterClass
+import com.maths.robostick.DataClasses.Courses
 import com.maths.robostick.databinding.ActivityChildCourseBinding
 
 class AdultCourseActivity : AppCompatActivity() {

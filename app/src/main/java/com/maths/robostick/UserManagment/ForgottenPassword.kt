@@ -1,4 +1,4 @@
-package com.maths.robostick
+package com.maths.robostick.UserManagment
 
 import android.os.Bundle
 import android.view.LayoutInflater

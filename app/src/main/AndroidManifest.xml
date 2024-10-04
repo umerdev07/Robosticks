@@ -24,10 +24,19 @@
         android:theme="@style/Theme.Robostick"
         tools:targetApi="31">
         <activity
+            android:name=".Teachers.WorkShopPhotosandForm"
+            android:exported="false" />
+        <activity
+            android:name=".Teachers.TeachersWorkshops"
+            android:exported="false" />
+        <activity
+            android:name=".Teachers.TeacherActivity"
+            android:exported="false" />
+        <activity
             android:name=".courseslist"
             android:exported="false" />
         <activity
-            android:name=".SplashActivity"
+            android:name=".OtherActivities.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -35,31 +44,30 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
-            android:name=".MediaDisplayActivity2"
+            android:name=".Students.MediaDisplayActivity2"
             android:exported="false" />
         <activity
-            android:name=".AdultCourseActivity"
+            android:name=".Students.AdultCourseActivity"
             android:exported="false" />
         <activity
-            android:name=".MediaDiaplayActivity"
+            android:name=".Students.MediaDiaplayActivity"
             android:exported="false" />
         <activity
-            android:name=".ChildCourseActivity"
+            android:name=".Students.ChildCourseActivity"
             android:exported="false" />
         <activity
-            android:name=".StudentActivity"
+            android:name=".Students.StudentActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".OtherActivities.MainActivity"
             android:exported="false" />
         <activity
-            android:name=".SigninActivity"
+            android:name=".UserManagment.SigninActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".UserManagment.LoginActivity"
             android:exported="false" />
     </application>
 

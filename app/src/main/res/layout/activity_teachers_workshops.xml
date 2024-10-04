@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/robostick_bg"
-    tools:context=".Students.AdultCourseActivity">
+    tools:context=".Teachers.TeachersWorkshops">
 
     <TextView
         android:id="@+id/textView2"
@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:gravity="center"
-        android:text="@string/learning_for_ages_11_and_up"
+        android:text="Teacher's Workshops"
         android:textColor="@color/orange"
         android:textSize="30sp"
         android:textStyle="bold"
@@ -28,17 +28,21 @@
         android:layout_width="match_parent"
         android:layout_height="834dp"
         android:padding="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintVertical_bias="0.0"
         tools:listitem="@layout/courseslist" />
+
     <com.github.ybq.android.spinkit.SpinKitView
         android:id="@+id/spin_kit"
         style="@style/SpinKitView.Large.ThreeBounce"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
         android:elevation="30dp"
+        android:layout_gravity="center"
         app:SpinKit_Color="@color/orange"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

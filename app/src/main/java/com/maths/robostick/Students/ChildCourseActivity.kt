@@ -73,7 +73,7 @@ class ChildCourseActivity : AppCompatActivity() {
                             startActivity(intent)
                         }
                     }
-                    binding.spinKit.visibility = View.GONE
+                    binding.spinKit.Visibiltiy = View.GONE
                 }
             }
 
